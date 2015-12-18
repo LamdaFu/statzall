@@ -12,6 +12,7 @@
 	<url>https://github.com/LamdaFu/statzall/wiki</url>
 	<description></description>
 	<modules>
+	<module>statzall-core</module>
 	</modules>
 	<dependencies>
 		<dependency>
