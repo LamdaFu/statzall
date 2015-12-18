@@ -29,8 +29,7 @@ public class Cast {
 		if (map == null || key == null || returnType == null) {
 			return null;
 		}
-		Object object = map.get(key);
-		return as(object, returnType);
+		return as(map.get(key), returnType);
 	}
 
 	/**
