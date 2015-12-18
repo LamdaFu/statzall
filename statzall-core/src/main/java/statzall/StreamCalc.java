@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.SortedMap;
 
 import org.apache.commons.collections4.trie.PatriciaTrie;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.util.FastMath;
 
 import cern.colt.buffer.DoubleBuffer;
@@ -48,7 +47,7 @@ public class StreamCalc implements Serializable {
 	int queueDepth;
 	Unibit unibit;
 
-	public StreamCalc() {
+	StreamCalc() {
 		super();
 	}
 
@@ -114,6 +113,18 @@ public class StreamCalc implements Serializable {
 	}
 
 	public SortedMap<String, Object> snapshot() {
+		return snapshot(phis);
+	}
+	
+	public SortedMap<String, Object> snapshot(int quantiles) {
+		return snapshot(calcPhi(quantiles));
+	}
+	
+	public SortedMap<String, Object> snapshot(double... phis) {
+		return snapshot(new DoubleArrayList(phis));
+	}
+	
+	public SortedMap<String, Object> snapshot(DoubleArrayList phis) {
 		microBatch();
 		PatriciaTrie<Object> p = new PatriciaTrie<>();
 		p.put(COUNT.alias, count);
