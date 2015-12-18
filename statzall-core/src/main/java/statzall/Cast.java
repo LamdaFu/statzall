@@ -25,17 +25,12 @@ public class Cast {
 	 * @param returnType
 	 * @return
 	 */
-	@SuppressWarnings({ "unchecked" })
 	public static <T> T getAs(Map<? extends Object, ? extends Object> map, Object key, Class<T> returnType) {
 		if (map == null || key == null || returnType == null) {
 			return null;
 		}
 		Object object = map.get(key);
-		if (object == null || !returnType.isAssignableFrom(object.getClass())) {
-			return null;
-		} else {
-			return (T) object;
-		}
+		return as(object, returnType);
 	}
 
 	/**
@@ -49,10 +44,9 @@ public class Cast {
 	 * @throws NullPointerException
 	 * @throws ClassCastException
 	 */
-	@SuppressWarnings({ "unchecked" })
 	public static <T> T getAs(Map<? extends Object, ? extends Object> map, String key)
 			throws NullPointerException, ClassCastException {
-		return (T) map.get(key);
+		return as(map.get(key));
 	}
 
 	/**
@@ -68,10 +62,12 @@ public class Cast {
 	 */
 	@SuppressWarnings({ "unchecked" })
 	public static <T> T as(Object object, Class<T> returnType) {
-		if (returnType == null) {
+		if (object == null) {
 			return null;
-		}
-		if (object == null || !returnType.isAssignableFrom(object.getClass())) {
+		} else if (!returnType.isAssignableFrom(object.getClass())) {
+			if (returnType.isAssignableFrom(String.class)) {
+				return (T)String.valueOf(object);
+			}
 			return null;
 		} else {
 			return (T) object;
