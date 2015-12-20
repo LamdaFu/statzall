@@ -6,9 +6,8 @@
 		<artifactId>statzall-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>statzall-core</groupId>
 	<artifactId>statzall-core</artifactId>
-	<name>λ福 - statzall core</name>
+	<name>λ福 - statzall Core</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

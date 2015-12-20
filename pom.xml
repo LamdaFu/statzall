@@ -13,6 +13,7 @@
 	<description></description>
 	<modules>
 	<module>statzall-core</module>
+	<module>statzall-cdap</module>
 	</modules>
 	<dependencies>
 		<dependency>
