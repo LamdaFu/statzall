@@ -45,4 +45,5 @@
 			<version>2.24.0</version>
 		</dependency>
 	</dependencies>
+	<description>Streaming stats supporting multiple data types in the same field (unions)</description>
 </project>
