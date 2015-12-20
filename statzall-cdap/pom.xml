@@ -8,7 +8,6 @@
 	</parent>
 	<artifactId>statzall-cdap</artifactId>
 	<name>λ福 - statzall for CDAP</name>
-	<description>Streaming stats supporting multiple data types in the same field (unions).</description>
 	<properties>
 		<app.main.class>statzall.cdap.StreamStatApp</app.main.class>
 	</properties>
@@ -66,4 +65,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<description>Streaming stats supporting unions (multi-typed fields)</description>
 </project>
