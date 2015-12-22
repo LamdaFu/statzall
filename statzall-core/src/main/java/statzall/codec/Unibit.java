@@ -15,9 +15,9 @@ import com.google.common.cache.CacheBuilder;
 /**
  * Packs an ASCII compatible String into a double while preserving as much
  * information as possible. If the String represents a Number, then it is
- * encoded as such. If not, the PM64 enum defines a 6-bit encoding scheme used
+ * encoded as such. If not, the MD64 enum defines a 6-bit encoding scheme used
  * for values up to literalCutoff characters. After that length, the input
- * String is phonetically encoded and then the PM16 enum is used for a 4-bit
+ * String is phonetically encoded and then the MD16 enum is used for a 4-bit
  * encoding of the phonetic characters.
  * 
  * The packed value contains reserved bits so that more complex phonetic
