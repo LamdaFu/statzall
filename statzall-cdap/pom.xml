@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>statzall-cdap</artifactId>
-	<name>λ福 - statzall for CDAP</name>
+	<name>λ夫 - statzall for CDAP</name>
 	<properties>
 		<app.main.class>statzall.cdap.StreamStatApp</app.main.class>
 	</properties>

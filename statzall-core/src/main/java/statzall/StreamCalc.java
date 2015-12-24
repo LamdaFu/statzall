@@ -124,7 +124,7 @@ public class StreamCalc implements Serializable {
 		return snapshot(new DoubleArrayList(phis));
 	}
 	
-	public SortedMap<String, Object> snapshot(DoubleArrayList phis) {
+	SortedMap<String, Object> snapshot(DoubleArrayList phis) {
 		microBatch();
 		PatriciaTrie<Object> p = new PatriciaTrie<>();
 		p.put(COUNT.alias, count);
